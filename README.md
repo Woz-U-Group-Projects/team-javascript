@@ -1,3 +1,3 @@
 # team-javascript
 
-Creat a Blog website using React, Node , Express with a MySQL Database
+Creat a Blog website using React, Node , Bootstrap and Express with a MySQL Database
