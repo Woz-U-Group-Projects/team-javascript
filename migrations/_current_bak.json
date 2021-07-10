@@ -15,23 +15,36 @@
                     "field": "user_id",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "last_update": {
+                "title": {
+                    "allowNull": false,
+                    "field": "title",
+                    "seqType": "Sequelize.STRING(75)"
+                },
+                "published": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "value": 0
+                    },
+                    "field": "published",
+                    "seqType": "Sequelize.BOOLEAN"
+                },
+                "updatedAt": {
                     "allowNull": false,
                     "defaultValue": {
                         "internal": true,
                         "value": "Sequelize.Literal"
                     },
-                    "field": "last_update",
+                    "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
+                },
+                "content": {
+                    "allowNull": false,
+                    "field": "content",
+                    "seqType": "Sequelize.TEXT"
                 },
                 "createdAt": {
                     "allowNull": false,
                     "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
                 }
             },
@@ -85,5 +98,5 @@
             "indexes": []
         }
     },
-    "revision": 2
+    "revision": 3
 }
