@@ -1,0 +1,42 @@
+{
+    "tables": {
+        "post": {
+            "tableName": "post",
+            "schema": {
+                "post_id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "post_id",
+                    "seqType": "Sequelize.INTEGER.UNSIGNED"
+                },
+                "user_id": {
+                    "allowNull": false,
+                    "field": "user_id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "last_update": {
+                    "allowNull": false,
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
+                    "field": "last_update",
+                    "seqType": "Sequelize.DATE"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
