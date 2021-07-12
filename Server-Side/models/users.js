@@ -1,5 +1,6 @@
-module.exports = function (sequelize, DataTypes) {
-  return sequelize.define('users', {
+module.exports = (sequelize, DataTypes) => {
+
+  const users = sequelize.define('users', {
     user_id: {
       allowNull: false,
       autoIncrement: true,
@@ -28,10 +29,12 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
-
   },
 
     {
       tableName: 'users'
     });
+
+  return users;
 };
+
