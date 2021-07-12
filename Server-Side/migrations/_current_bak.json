@@ -107,22 +107,22 @@
                     "field": "UserId",
                     "seqType": "Sequelize.INTEGER"
                 },
-                "FirstName": {
-                    "field": "FirstName",
+                "first_name": {
+                    "field": "first_name",
                     "seqType": "Sequelize.STRING"
                 },
-                "LastName": {
-                    "field": "LastName",
+                "last_name": {
+                    "field": "last_name",
                     "seqType": "Sequelize.STRING"
                 },
-                "Email": {
+                "email": {
                     "unique": true,
-                    "field": "Email",
+                    "field": "email",
                     "seqType": "Sequelize.STRING"
                 },
-                "Username": {
+                "username": {
                     "unique": true,
-                    "field": "Username",
+                    "field": "username",
                     "seqType": "Sequelize.STRING"
                 },
                 "Password": {
@@ -131,10 +131,18 @@
                     "seqType": "Sequelize.STRING"
                 },
                 "createdAt": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
                     "field": "createdAt",
                     "seqType": "Sequelize.DATE"
                 },
                 "updatedAt": {
+                    "defaultValue": {
+                        "internal": true,
+                        "value": "Sequelize.Literal"
+                    },
                     "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
                 }
@@ -142,5 +150,5 @@
             "indexes": []
         }
     },
-    "revision": 4
+    "revision": 6
 }
