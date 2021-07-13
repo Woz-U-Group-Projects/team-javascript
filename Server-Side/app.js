@@ -46,6 +46,4 @@ models.sequelize.sync().then(function() {
   console.log("DB Sync'd up")
 });
 
-//Express is running on port 3001 and React runs on  port 3000
-
 module.exports = app;
