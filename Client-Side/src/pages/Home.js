@@ -11,7 +11,7 @@ class Home extends React.Component {
     render() {
       return (
         <>
-       
+       <h1>Blogs go here</h1>
     
         
         </>
