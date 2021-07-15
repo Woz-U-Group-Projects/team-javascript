@@ -6,7 +6,7 @@ class Home extends React.Component {
       this.state = { home: '' };
     }
     myChangeHandler = (event) => {
-      this.setState({uhome: event.target.value});
+      this.setState({home: event.target.value});
     }
     render() {
       return (
