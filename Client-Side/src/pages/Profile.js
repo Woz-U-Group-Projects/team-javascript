@@ -21,11 +21,9 @@ const Profile = () => {
                                 <h5 class="font-weight-bold mb-0 d-block"></h5><small class="text-muted"> <i class="fas fa-image mr-1"></i>Blogs</small>
                             </li>
                             <li class="list-inline-item">
-                                <h5 class="font-weight-bold mb-0 d-block"></h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Followers</small>
+                                <h5 class="font-weight-bold mb-0 d-block"></h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Friends</small>
                             </li>
-                            <li class="list-inline-item">
-                                <h5 class="font-weight-bold mb-0 d-block"></h5><small class="text-muted"> <i class="fas fa-user mr-1"></i>Following</small>
-                            </li>
+                            
                         </ul>
                     </div>
                     <div class="px-4 py-3">
