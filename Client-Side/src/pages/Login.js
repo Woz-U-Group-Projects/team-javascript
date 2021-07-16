@@ -1,42 +1,51 @@
-import React from 'react';
-import Logo from '../images/blogstertemp.png'
+import React, { useState, useContext } from "react";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { AuthContext } from "../helpers/AuthContext";
 
-class Login extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = { login: '' };
-    }
-    myChangeHandler = (event) => {
-      this.setState({login: event.target.value});
-    }
+function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { setAuthState } = useContext(AuthContext);
 
-render() {
-    return (
-      <>
-      <h1 className="welcome">Welcome to Blogster!</h1>
+  let history = useHistory();
 
-      <div className="form">
-      <form id="login" name="login" method="POST" action="/users/login">
-         
-          <div>
-              <label for="name">Username: </label>
-              <input type="text" name="username" placeholder="Please enter username"required />
-          </div>
-          <div>
-              <label for="name">Password: </label>
-              <input type="password" name="password" required />
-          </div>
-          <div>
-              <button type="submit">Submit</button>
-          </div>
-      </form>
-      </div>
+  const login = () => {
+    const data = { username: username, password: password };
+    axios.post("http://localhost:3001/auth/login", data).then((response) => {
+      if (response.data.error) {
+        alert(response.data.error);
+      } else {
+        localStorage.setItem("accessToken", response.data.token);
+        setAuthState({
+          username: response.data.username,
+          id: response.data.id,
+          status: true,
+        });
+        history.push("/");
+      }
+    });
+  };
+  return (
+    <div className="loginContainer">
+      <label>Username:</label>
+      <input
+        type="text"
+        onChange={(event) => {
+          setUsername(event.target.value);
+        }}
+      />
+      <label>Password:</label>
+      <input
+        type="password"
+        onChange={(event) => {
+          setPassword(event.target.value);
+        }}
+      />
 
-      <img src={Logo} className="brand" alt="placeholderimg" />
-      </>
-    );
-  }
+      <button onClick={login}> Login </button>
+    </div>
+  );
 }
 
-
-export default Login
+export default Login;
