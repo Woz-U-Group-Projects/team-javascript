@@ -1,11 +1,13 @@
+const { MEDIUMINT } = require("sequelize");
+
 module.exports = (sequelize, DataTypes) => {
 
   const users = sequelize.define('users', {
-    username: {
-      type: DataTypes.STRING,
+    user_id: {
       allowNull: false,
+      autoIncrement: true,
       primaryKey: true,
-     
+      type: DataTypes.INTEGER
     },
     first_name: DataTypes.STRING,
     last_name: DataTypes.STRING,
@@ -13,10 +15,20 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       unique: true
     },
+    username: {
+      type: DataTypes.STRING(255),
+      unique: true
+    },
     password: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(255),
       allowNull: false,
     },
+
+    profilePictureID: {
+      type: DataTypes.BLOB,
+      allowNull: false,
+    },
+
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
@@ -26,17 +38,10 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
     },
   },
-);
 
-// users.associate = (models) => {
-//   Users.hasMany(models.Likes, {
-//     onDelete: "cascade",
-//   });
-
-//   users.hasMany(models.Posts, {
-//     onDelete: "cascade",
-//   });
-// };
+    {
+      tableName: 'users'
+    });
 
   return users;
 };
