@@ -25,8 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     },
 
     profilePictureID: {
-      type: DataTypes.BLOB,
-      allowNull: false,
+      type: DataTypes.BLOB
     },
 
     createdAt: {
