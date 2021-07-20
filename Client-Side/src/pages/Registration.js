@@ -5,9 +5,7 @@ import axios from "axios";
 
 function Registration() {
   const initialValues = {
-    first_name: "", 
-    last_name: "", 
-    email: "",
+   
     username: "",
     password: "",
   };
@@ -15,9 +13,7 @@ function Registration() {
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
-    first_name: Yup.string().min(4).max(20).required(),
-    last_name: Yup.string().min(4).max(20).required(),
-    email: Yup.string().min(4).max(20).required(),
+    
   });
 
   const onSubmit = (data) => {
