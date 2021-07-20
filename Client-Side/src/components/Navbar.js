@@ -25,7 +25,7 @@ const Navbar = () => {
               <a class="nav-link"><Link to="/login">Login</Link></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link"><Link to="/profile">Profile</Link></a>
+              <a class="nav-link"><Link to="/profile/:id">Profile</Link></a>
             </li>
           </ul>
           
