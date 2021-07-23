@@ -2,6 +2,8 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import {Link} from "react-router-dom"
+
 
 function Registration() {
   const initialValues = {
@@ -22,8 +24,11 @@ function Registration() {
     });
   };
 
-  return (
-    <div>
+  return ( 
+  
+    
+    <div className ="formRegistration">
+     
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
@@ -82,10 +87,12 @@ function Registration() {
             placeholder="Your Password..."
           />
           </div>
-          <button type="submit"> Register</button>
+         <Link to="/login" className="btn btn-primary">Register</Link>
+         <button type="submit"> Register</button>
         </Form>
       </Formik>
     </div>
+    
   );
 }
 

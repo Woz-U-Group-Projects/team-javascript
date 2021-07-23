@@ -1,93 +1,139 @@
 {
     "tables": {
-        "post": {
-            "tableName": "post",
+        "Comments": {
+            "tableName": "Comments",
             "schema": {
-                "post_id": {
+                "id": {
                     "allowNull": false,
                     "primaryKey": true,
                     "autoIncrement": true,
-                    "field": "post_id",
-                    "seqType": "Sequelize.INTEGER.UNSIGNED"
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
                 },
-                "username": {
-                    "unique": true,
-                    "field": "username",
-                    "seqType": "Sequelize.STRING(255)"
-                },
-                "title": {
+                "commentBody": {
                     "allowNull": false,
-                    "field": "title",
-                    "seqType": "Sequelize.STRING(75)"
-                },
-                "published": {
-                    "allowNull": false,
-                    "defaultValue": {
-                        "value": 0
-                    },
-                    "field": "published",
-                    "seqType": "Sequelize.BOOLEAN"
-                },
-                "updatedAt": {
-                    "allowNull": false,
-                    "defaultValue": {
-                        "internal": true,
-                        "value": "Sequelize.Literal"
-                    },
-                    "field": "updatedAt",
-                    "seqType": "Sequelize.DATE"
-                },
-                "content": {
-                    "allowNull": false,
-                    "field": "content",
-                    "seqType": "Sequelize.TEXT"
-                },
-                "createdAt": {
-                    "allowNull": false,
-                    "field": "createdAt",
-                    "seqType": "Sequelize.DATE"
-                }
-            },
-            "indexes": []
-        },
-        "post_comment": {
-            "tableName": "post_comment",
-            "schema": {
-                "comment_id": {
-                    "allowNull": false,
-                    "primaryKey": true,
-                    "autoIncrement": true,
-                    "field": "comment_id",
-                    "seqType": "Sequelize.INTEGER.UNSIGNED"
+                    "field": "commentBody",
+                    "seqType": "Sequelize.STRING"
                 },
                 "username": {
                     "allowNull": false,
                     "field": "username",
                     "seqType": "Sequelize.STRING"
                 },
-                "title": {
-                    "allowNull": false,
-                    "field": "title",
-                    "seqType": "Sequelize.STRING(75)"
-                },
                 "createdAt": {
                     "allowNull": false,
-                    "defaultValue": {
-                        "internal": true,
-                        "value": "Sequelize.Literal"
-                    },
                     "field": "createdAt",
                     "seqType": "Sequelize.DATE"
-                },
-                "content": {
-                    "allowNull": true,
-                    "field": "content",
-                    "seqType": "Sequelize.TEXT"
                 },
                 "updatedAt": {
                     "allowNull": false,
                     "field": "updatedAt",
                     "seqType": "Sequelize.DATE"
+                },
+                "PostId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Posts",
+                        "key": "id"
+                    },
+                    "onDelete": "cascade",
+                    "onUpdate": "CASCADE",
+                    "field": "PostId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "Likes": {
+            "tableName": "Likes",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "PostId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Posts",
+                        "key": "id"
+                    },
+                    "onDelete": "cascade",
+                    "onUpdate": "CASCADE",
+                    "field": "PostId",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "UserId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "cascade",
+                    "onUpdate": "CASCADE",
+                    "field": "UserId",
+                    "seqType": "Sequelize.INTEGER"
+                }
+            },
+            "indexes": []
+        },
+        "Posts": {
+            "tableName": "Posts",
+            "schema": {
+                "id": {
+                    "allowNull": false,
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "field": "id",
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "title": {
+                    "allowNull": false,
+                    "field": "title",
+                    "seqType": "Sequelize.STRING"
+                },
+                "postText": {
+                    "allowNull": false,
+                    "field": "postText",
+                    "seqType": "Sequelize.STRING"
+                },
+                "username": {
+                    "allowNull": false,
+                    "field": "username",
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "field": "createdAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "field": "updatedAt",
+                    "seqType": "Sequelize.DATE"
+                },
+                "UserId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "users",
+                        "key": "id"
+                    },
+                    "onDelete": "cascade",
+                    "onUpdate": "CASCADE",
+                    "field": "UserId",
+                    "seqType": "Sequelize.INTEGER"
                 }
             },
             "indexes": []
@@ -95,12 +141,22 @@
         "users": {
             "tableName": "users",
             "schema": {
-                "user_id": {
+                "id": {
                     "allowNull": false,
-                    "autoIncrement": true,
                     "primaryKey": true,
-                    "field": "user_id",
+                    "autoIncrement": true,
+                    "field": "id",
                     "seqType": "Sequelize.INTEGER"
+                },
+                "username": {
+                    "unique": true,
+                    "field": "username",
+                    "seqType": "Sequelize.STRING(255)"
+                },
+                "password": {
+                    "allowNull": false,
+                    "field": "password",
+                    "seqType": "Sequelize.STRING(255)"
                 },
                 "first_name": {
                     "field": "first_name",
@@ -114,16 +170,6 @@
                     "unique": true,
                     "field": "email",
                     "seqType": "Sequelize.STRING"
-                },
-                "username": {
-                    "unique": true,
-                    "field": "username",
-                    "seqType": "Sequelize.STRING(255)"
-                },
-                "password": {
-                    "allowNull": false,
-                    "field": "password",
-                    "seqType": "Sequelize.STRING(255)"
                 },
                 "profilePictureID": {
                     "field": "profilePictureID",
