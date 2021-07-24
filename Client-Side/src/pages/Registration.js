@@ -2,9 +2,12 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import {Link} from "react-router-dom"
+
 
 function Registration() {
   const initialValues = {
+   
     username: "",
     password: "",
   };
@@ -12,6 +15,7 @@ function Registration() {
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
+    
   });
 
   const onSubmit = (data) => {
@@ -20,14 +24,49 @@ function Registration() {
     });
   };
 
-  return (
-    <div>
+  return ( 
+  
+    
+    <div className ="formRegistration">
+     
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
+        
         <Form className="formContainer">
+          <div>
+          <label>First Name: </label>
+          <ErrorMessage name="first_name" component="span" />
+          <Field
+          
+            id="inputCreatePost"
+            name="first_name"
+            placeholder="(Ex. John...)"        
+          />
+          </div>
+          <div>
+          <label>Last Name: </label>
+          <ErrorMessage name="last_name" component="span" />
+          <Field
+          
+            id="inputCreatePost"
+            name="last_name"
+            placeholder="(Ex. Doe...)"        
+          />
+          </div>
+          <div>
+          <label>Email: </label>
+          <ErrorMessage name="email" component="span" />
+          <Field
+          
+            id="inputCreatePost"
+            name="email"
+            placeholder="(Ex. John123@gmail.com...)"        
+          />
+          </div>
+          <div>
           <label>Username: </label>
           <ErrorMessage name="username" component="span" />
           <Field
@@ -36,7 +75,8 @@ function Registration() {
             name="username"
             placeholder="(Ex. John123...)"        
           />
-
+          </div>
+          <div>
           <label>Password: </label>
           <ErrorMessage name="password" component="span" />
           <Field
@@ -46,11 +86,13 @@ function Registration() {
             name="password"
             placeholder="Your Password..."
           />
-
-          <button type="submit"> Register</button>
+          </div>
+         {/* <Link to="/login" className="btn btn-primary">Register</Link> */}
+         <button type="submit" className="submitButton"> Register</button>
         </Form>
       </Formik>
     </div>
+    
   );
 }
 
