@@ -1,3 +1,10 @@
+/*Main*/
+:root {
+  --primary-white: #ffffff;
+  --primary-dark: rgba(52,58,64);
+  --primary-azure: #037ffc;
+}
+
 .form {
   text-align: center;
 }
@@ -13,3 +20,37 @@
   margin-right: auto;
   width: auto;
 }
+
+/***CSS for the Registration form***/
+.formRegistration{
+  display:flex;
+  justify-content: center;
+  margin: 5rem;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  padding: 5px 5px 5px 30px;
+  background-repeat: no-repeat;
+  background-position: 8px 9px;
+  margin-bottom: 10px;
+}
+
+
+.submitButton{
+  text-align:center;
+  color: rgb(37, 122, 74);
+  text-shadow: 0px 1px 1px #ffffff;
+  border-bottom: 2pm solid #b2b2b2;
+  background-color: #b9e4e3;
+  background:
+  -webkit-gradient(linear, left top, left bottom from(#beeae9), to(#a8cfce));
+  background:
+  -moz-linear-gradient(top, #beeae9, #a8cfce);
+  background:
+  -o-linear-gradient(top, #beeae9, #a8cfce);
+  background:
+  -ms-linear-gradient(top, #beeae9, #a8cfce);
+}
+ 
+
+
+/***Login CSS***/
