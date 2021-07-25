@@ -17,7 +17,7 @@ router.get("/byId/:id", async (req, res) => {
 });
 
 router.get("/byuserId/:id", async (req, res) => {
-  const id = req.params.id;
+  const id = req.params.user_id;
   const listOfPosts = await Posts.findAll({
     where: { UserId: id },
     include: [Likes],
@@ -45,7 +45,7 @@ router.put("/postText", validateToken, async (req, res) => {
   res.json(newText);
 });
 
-router.delete("/:postId", validateToken, async (req, res) => {
+router.delete("/:Id", validateToken, async (req, res) => {
   const postId = req.params.postId;
   await Posts.destroy({
     where: {

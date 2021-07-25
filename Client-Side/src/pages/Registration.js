@@ -2,12 +2,12 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import {Link} from "react-router-dom"
+
 
 function Registration() {
   const initialValues = {
-    first_name: "", 
-    last_name: "", 
-    email: "",
+   
     username: "",
     password: "",
   };
@@ -15,9 +15,7 @@ function Registration() {
   const validationSchema = Yup.object().shape({
     username: Yup.string().min(3).max(15).required(),
     password: Yup.string().min(4).max(20).required(),
-    first_name: Yup.string().min(4).max(20).required(),
-    last_name: Yup.string().min(4).max(20).required(),
-    email: Yup.string().min(4).max(20).required(),
+    
   });
 
   const onSubmit = (data) => {
@@ -26,8 +24,11 @@ function Registration() {
     });
   };
 
-  return (
-    <div>
+  return ( 
+  
+    
+    <div className ="formRegistration">
+     
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
@@ -86,10 +87,12 @@ function Registration() {
             placeholder="Your Password..."
           />
           </div>
-          <button type="submit"> Register</button>
+         <Link to="/login" className="btn btn-primary">Register</Link>
+         <button type="submit"> Register</button>
         </Form>
       </Formik>
     </div>
+    
   );
 }
 

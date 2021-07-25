@@ -4,7 +4,7 @@ const { users } = require("../models");
 const bcrypt = require("bcrypt");
 const { validateToken } = require("../services/auth");
 const { sign } = require("jsonwebtoken");
-const mysql = require("mysql2");
+
 
 router.post("/", async (req, res, next) => {
   try {
@@ -29,7 +29,7 @@ router.post("/login", async (req, res) => {
 
   const user = await users.findOne({ where: { username: username } });
 
-  if (!user) res.json({ error: "User Doesn't Exist" });
+  // if (!user) res.json({ error: "User Doesn't Exist!!!TEST" });
 
   bcrypt.compare(password, user.password).then(async (match) => {
     if (!match) res.json({ error: "Wrong Username And Password Combination" });

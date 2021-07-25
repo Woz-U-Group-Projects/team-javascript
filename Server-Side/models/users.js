@@ -2,26 +2,25 @@ const { MEDIUMINT } = require("sequelize");
 
 module.exports = (sequelize, DataTypes) => {
 
-  const users = sequelize.define('users', {
-    user_id: {
-      allowNull: false,
-      autoIncrement: true,
-      primaryKey: true,
-      type: DataTypes.INTEGER
-    },
-    first_name: DataTypes.STRING,
-    last_name: DataTypes.STRING,
-    email: {
-      type: DataTypes.STRING,
-      unique: true
-    },
+  const Users = sequelize.define('Users', {
+    
     username: {
       type: DataTypes.STRING(255),
       unique: true
     },
+    
     password: {
       type: DataTypes.STRING(255),
       allowNull: false,
+    },
+
+    first_name: DataTypes.STRING,
+
+    last_name: DataTypes.STRING,
+
+    email: {
+      type: DataTypes.STRING,
+      unique: true
     },
 
     profilePictureID: {
@@ -42,6 +41,16 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'users'
     });
 
-  return users;
-};
-
+    Users.associate = (models) => {
+      Users.hasMany(models.Likes, {
+        onDelete: "cascade",
+      });
+  
+      Users.hasMany(models.Posts, {
+        onDelete: "cascade",
+      });
+    };
+  
+    return Users;
+  };
+  

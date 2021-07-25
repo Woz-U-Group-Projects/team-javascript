@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, NavLink, Route, Switch, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -12,6 +12,10 @@ import Home from "./pages/Home"
 import Registration from "./pages/Registration"
 import Login from "./pages/Login"
 import Profile from "./pages/Profile"
+import Post from "./pages/Post"
+import CreatePost from "./pages/CreatePost"
+import PageNotFound from "./pages/PageNotFound";
+import ChangePassword from "./pages/ChangePassword";
 
 //Components
 import Navbar from "./components/Navbar";
@@ -49,13 +53,16 @@ function App() {
   };
 
   return (
+    <div>
+      <Navbar></Navbar>
     <div className="App">
       <AuthContext.Provider value={{ authState, setAuthState }}>
         <Router>
           
               {!authState.status ? (
                 <>
-                 <Navbar />
+                 <Link to="/login"> Login</Link>
+                  <Link to="/registration"> Registration</Link>
                 </>
               ) : (
                 <>
@@ -71,12 +78,17 @@ function App() {
          
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/createpost" exact component={CreatePost} />
+            <Route path="/post/:id" exact component={Post} />
             <Route path="/registration" exact component={Registration} />
             <Route path="/login" exact component={Login} />
             <Route path="/profile/:id" exact component={Profile} />
+            <Route path="/changepassword" exact component={ChangePassword} />
+            <Route path="*" exact component={PageNotFound} />
           </Switch>
         </Router>
       </AuthContext.Provider>
+    </div>
     </div>
   );
 }

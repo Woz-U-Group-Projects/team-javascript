@@ -3,6 +3,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../helpers/AuthContext";
 
+
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,15 +20,17 @@ function Login() {
         localStorage.setItem("accessToken", response.data.token);
         setAuthState({
           username: response.data.username,
-          id: response.data.id,
+          id: response.data.user_id,
           status: true,
         });
-        history.push("/");
+        history.push("/post");
       }
     });
   };
   return (
-    <div className="loginContainer">
+   
+    <div className="loginContainer"> 
+    
       <label>Username:</label>
       <input
         type="text"
@@ -42,9 +45,11 @@ function Login() {
           setPassword(event.target.value);
         }}
       />
+      
+      <button onClick={login()}>NEW LOGIN</button>
 
-      <button onClick={login}> Login </button>
     </div>
+   
   );
 }
 
