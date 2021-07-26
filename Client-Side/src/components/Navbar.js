@@ -1,36 +1,60 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import Logo2 from '../images/blogsterlogo.png'
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import Logo2 from '../images/blogsterlogo.png';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">
-            <img src={Logo2}  width="60" height="60" alt="small logo"/>
-            Blogster
-        </a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarText">
-          {/* <ul className="navbar-nav ms-auto">
-            <li className="nav-item active">
-              <Link id="RouterNavLink" to="/" className="btn btn-primary"> Home </Link>
-            </li>
-            <li className="nav-item active">
-              <Link id ="RouterNavLink" to="/registration" className="btn btn-primary">Signup</Link>
-            </li>
-            <li className="nav-item">
-              <Link id="RouterNavLink" to="/login" className="btn btn-primary">Login</Link>
-            </li>
-            <li className="nav-item">
-              <Link id="RouterNavLink" to="/profile/:id" className="btn btn-primary">Profile</Link>
-            </li>
-          </ul> */}
-          
-        </div>
-      </nav>
-    )
-}
+  return (
+    <nav class='bg-gray-50'>
+      <a
+        class='navbar-brand flex flex-col justify-center items-center'
+        href='#'>
+        <img src={Logo2} className='' width={80} height={80} alt='small logo' />
+        <span className='text-2xl text-blue-900'>Blogster</span>
+      </a>
+      <ul class='flex item-center justify-center'>
+        <li class='nav-item active'>
+          <a className='nav-link'>
+            <NavLink
+              to='/'
+              className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
+              activeClassName='bg-blue-900 text-white'>
+              Home
+            </NavLink>
+          </a>
+        </li>
+        <li className='nav-item active'>
+          <a class='nav-link'>
+            <NavLink
+              to='/registration'
+              className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
+              activeClassName='bg-blue-900 text-white'>
+              Signup
+            </NavLink>
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link'>
+            <NavLink
+              to='/login'
+              className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
+              activeClassName='bg-blue-900 text-white'>
+              Login
+            </NavLink>
+          </a>
+        </li>
+        <li class='nav-item'>
+          <a class='nav-link'>
+            <NavLink
+              to='/profile'
+              className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
+              activeClassName='bg-blue-900 text-white'>
+              Profile
+            </NavLink>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
 export default Navbar;
