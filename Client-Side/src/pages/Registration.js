@@ -36,8 +36,8 @@ function Registration() {
       >
         
         <Form className="formContainer">
-          <div>
-          <label>First Name: </label>
+          <div className="div1">
+          <label> First Name: </label>
           <ErrorMessage name="first_name" component="span" />
           <Field
           
@@ -46,8 +46,9 @@ function Registration() {
             placeholder="(Ex. John...)"        
           />
           </div>
-          <div>
-          <label>Last Name: </label>
+          
+          <div className="div2">
+          <label> Last Name: </label>
           <ErrorMessage name="last_name" component="span" />
           <Field
           
@@ -56,8 +57,9 @@ function Registration() {
             placeholder="(Ex. Doe...)"        
           />
           </div>
-          <div>
-          <label>Email: </label>
+          
+          <div className="div3">
+          <label> Email: </label>
           <ErrorMessage name="email" component="span" />
           <Field
           
@@ -66,8 +68,9 @@ function Registration() {
             placeholder="(Ex. John123@gmail.com...)"        
           />
           </div>
-          <div>
-          <label>Username: </label>
+          
+          <div className="div4">
+          <label> Username: </label>
           <ErrorMessage name="username" component="span" />
           <Field
           
@@ -76,8 +79,9 @@ function Registration() {
             placeholder="(Ex. John123...)"        
           />
           </div>
-          <div>
-          <label>Password: </label>
+          
+          <div className="div5">
+          <label> Password: </label>
           <ErrorMessage name="password" component="span" />
           <Field
          
@@ -87,8 +91,9 @@ function Registration() {
             placeholder="Your Password..."
           />
           </div>
+      
          {/* <Link to="/login" className="btn btn-primary">Register</Link> */}
-         <button type="submit" className="submitButton"> Register</button>
+         <button type="submit" className="submitButton"> Register </button>
         </Form>
       </Formik>
     </div>

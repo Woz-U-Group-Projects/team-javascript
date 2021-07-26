@@ -26,7 +26,7 @@
   display:flex;
   justify-content: center;
   margin: 5rem;
-  border: 1px solid #bdbdbd;
+  border: 2px solid #bdbdbd;
   border-radius: 5px;
   padding: 5px 5px 5px 30px;
   background-repeat: no-repeat;
@@ -50,7 +50,30 @@
   background:
   -ms-linear-gradient(top, #beeae9, #a8cfce);
 }
+
+.submitButton:hover {
+  color: #333333;
+  border: 1px solid #a4a4a4;
+  border-top: 2px solid #b2b2b2;
+  background-color: #a0dbc4;
+  background: 
+  -webkit-gradient(linear, left top, left bottom, from(#a8cfce), to(#beeae9));
+  background:
+  -moz-linear-gradient(top, #a8cfce, #beeae9);
+  background:
+  -o-linear-gradient(top, #a8cfce, #beeae9);
+  background:
+  -ms-linear-gradient(top, #a8cfce, #beeae9);
+}
  
+label {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.div1, .div2, .div3, .div4, .div5 {
+  padding: 10px;
+}
 
 
 /***Login CSS***/
