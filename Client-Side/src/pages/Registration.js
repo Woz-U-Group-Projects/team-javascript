@@ -33,6 +33,7 @@ function Registration() {
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
+        className="formik"
       >
         
         <Form className="formContainer">
