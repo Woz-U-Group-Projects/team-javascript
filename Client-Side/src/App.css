@@ -1,0 +1,29 @@
+:root {
+  --primary-white: #ffffff;
+  --primary-dark: rgba(52,58,64);
+  --primary-azure: #037ffc;
+}
+
+.form {
+  text-align: center;
+}
+
+.welcome {
+
+  text-align: center;
+}
+
+.brand{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+}
+
+/***CSS for the Registration form***/
+.formRegistration{
+  display:flex;
+  justify-content: center;
+  margin: 5rem;
+  
+}
