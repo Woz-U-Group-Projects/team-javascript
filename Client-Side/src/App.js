@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -17,8 +17,9 @@ import CreatePost from "./pages/CreatePost"
 import PageNotFound from "./pages/PageNotFound";
 import ChangePassword from "./pages/ChangePassword";
 
+
 //Components
-import Navbar from "./components/Navbar";
+import Header from "./components/Header"
 
 function App() {
   const [authState, setAuthState] = useState({
@@ -54,41 +55,52 @@ function App() {
 
   return (
     <div>
-      <Navbar></Navbar>
-    <div className="App">
-      <AuthContext.Provider value={{ authState, setAuthState }}>
-        <Router>
-          
-              {!authState.status ? (
-                <>
-                 <Link to="/login"> Login</Link>
-                  <Link to="/registration"> Registration</Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/"> Home Page</Link>
-                  <Link to="/createpost"> Create A Post</Link>
-                </>
-              )}
-           
+      <Header></Header>
+      <div className="App">
+        <AuthContext.Provider value={{ authState, setAuthState }}>
+          <Router>
+            {!authState.status ? (
+              <>
+                <div class='navbar-brand flex flex-col justify-center items-center'>
+                  <div >
+                    <Link to="/login" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Login</Link>
+                    <Link to="/registration" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Registration</Link>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className='nav'>
+                  <Link to="/" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
+                    activeClassName='bg-blue-900 text-white'> Home </Link>
+                  
+                  <Link to="/createpost" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
+                    activeClassName='bg-blue-900 text-white'> Create A Post</Link>
+                    
+                  <Link to="/profile" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
+                    activeClassName='bg-blue-900 text-white'> Profile</Link>
+                </div>
+              </>
+            )}
+
             <div className="loggedInContainer">
               <h1>{authState.username} </h1>
-              {authState.status && <button onClick={logout}> Logout</button>}
+              {authState.status && <button onClick={logout} className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Logout</button>}
             </div>
-         
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/createpost" exact component={CreatePost} />
-            <Route path="/post/:id" exact component={Post} />
-            <Route path="/registration" exact component={Registration} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/profile/:id" exact component={Profile} />
-            <Route path="/changepassword" exact component={ChangePassword} />
-            <Route path="*" exact component={PageNotFound} />
-          </Switch>
-        </Router>
-      </AuthContext.Provider>
-    </div>
+
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/createpost" exact component={CreatePost} />
+              <Route path="/post/:id" exact component={Post} />
+              <Route path="/registration" exact component={Registration} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/profile" exact component={Profile} />
+              <Route path="/changepassword" exact component={ChangePassword} />
+              <Route path="*" exact component={PageNotFound} />
+            </Switch>
+          </Router>
+        </AuthContext.Provider>
+      </div>
     </div>
   );
 }

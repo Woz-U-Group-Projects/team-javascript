@@ -1,13 +1,17 @@
+/**Primary colors used for project**/
+
 :root {
   --primary-white: #ffffff;
   --primary-dark: rgba(52,58,64);
   --primary-azure: #037ffc;
 }
 
+/* Sign in form*/
 .form {
   text-align: center;
 }
 
+/**Header Elements**/
 .welcome {
 
   text-align: center;
@@ -18,6 +22,16 @@
   margin-left: auto;
   margin-right: auto;
   width: auto;
+}
+
+/**Navbar styling**/
+
+.nav {
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  font-size:large;
+  font-weight: 500 ;
 }
 
 /***CSS for the Registration form***/

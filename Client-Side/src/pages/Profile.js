@@ -14,7 +14,7 @@ function Profile() {
 
   useEffect(() => {
     axios.get(`http://localhost:3001/auth/basicinfo/${id}`).then((response) => {
-      setUsername(response.data.username);
+      setUsername(response.data);
     });
 
     axios.get(`http://localhost:3001/posts/byuserId/${id}`).then((response) => {
