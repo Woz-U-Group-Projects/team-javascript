@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
-import {Link} from "react-router-dom";
 
 
 function Profile() {
@@ -24,8 +23,8 @@ function Profile() {
 
   return (
     
-    <div className="row py-5 px-4">
-      <div className="col-md-5 mx-auto">
+    <div className="row py-12 px-px">
+      <div className="">
 
         <div className="bg-white shadow rounded overflow-hidden">
           <div className="px-4 pt-0 pb-4 cover">
@@ -34,7 +33,7 @@ function Profile() {
               <div className="media-body mb-5 text-white">
                 <h4 className="mt-0 mb-0 text-dark">Welcome {username} </h4>
                 {authState.username === username && (
-                  <button
+                  <button className="text-dark"
                     onClick={() => {
                       history.push("/changepassword");
                     }}
@@ -67,32 +66,28 @@ function Profile() {
 
             </div>
           </div>
-
-          <div>
-            <Link to="/post" className="btn btn-primary">Make a new post</Link>
-          </div>
           
           <div className="py-4 px-4">
             <div className="d-flex align-items-center justify-content-between mb-3">
               <h5 className="mb-0">Recent posts</h5><a href="#" className="btn btn-link text-muted">Show all</a>
             </div>
 
-            <div className="listOfPosts">
+            <div >
               {listOfPosts.map((value, key) => {
                 return (
-                  <div key={key} className="post">
-                    <div className="title"> {value.title} </div>
+                  <div key={key} >
+                    <div > {value.title} </div>
                     <div
-                      className="body"
+                      
                       onClick={() => {
                         history.push(`/post/${value.id}`);
                       }}
                     >
                       {value.postText}
                     </div>
-                    <div className="footer">
-                      <div className="username">{value.username}</div>
-                      <div className="buttons">
+                    <div >
+                      <div >{value.username}</div>
+                      <div >
                         <label> {value.Likes.length}</label>
                       </div>
                     </div>

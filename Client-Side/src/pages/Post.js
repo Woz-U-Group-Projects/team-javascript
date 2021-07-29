@@ -109,7 +109,7 @@ function Post() {
 
   return (
    
-    <div className="postPage">
+    <div className="flex flex-col justify-center align-center">
       <div className="leftSide">
         <div className="post" id="individual">
           <div
