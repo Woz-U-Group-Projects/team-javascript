@@ -1,5 +1,7 @@
 ### Blogster: A blogging web application
 
+## A Team Javascript production
+
 ## Built With:
 HTML/CSS/JS
 
