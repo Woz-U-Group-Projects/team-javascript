@@ -14,42 +14,43 @@ const Navbar = () => {
       <ul class='flex item-center justify-center'>
         <li class='nav-item active'>
           <a className='nav-link'>
-            <NavLink
+            <Link
               to='/'
+              
               className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
               activeClassName='bg-blue-900 text-white'>
               Home
-            </NavLink>
+            </Link>
           </a>
         </li>
         <li className='nav-item active'>
           <a class='nav-link'>
-            <NavLink
+            <Link
               to='/registration'
               className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
               activeClassName='bg-blue-900 text-white'>
               Signup
-            </NavLink>
+            </Link>
           </a>
         </li>
         <li class='nav-item'>
           <a class='nav-link'>
-            <NavLink
+            <Link
               to='/login'
               className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
               activeClassName='bg-blue-900 text-white'>
               Login
-            </NavLink>
+            </Link>
           </a>
         </li>
         <li class='nav-item'>
           <a class='nav-link'>
-            <NavLink
+            <Link
               to='/profile'
               className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'
               activeClassName='bg-blue-900 text-white'>
               Profile
-            </NavLink>
+            </Link>
           </a>
         </li>
       </ul>
