@@ -4,6 +4,16 @@ import { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import { AuthContext } from "../helpers/AuthContext";
+import {ShareSocial} from 'react-share-social'
+
+const style = {
+  background: '#0d6efd',
+  borderRadius: 3,
+  border: 0,
+  color: 'white',
+  padding: '0 10px',
+  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+};
 
 function Home() {
   const [listOfPosts, setListOfPosts] = useState([]);
@@ -67,13 +77,13 @@ function Home() {
   };
 
   return (
-    <div>
+    <div className='w-1/3 mx-auto'>
       {listOfPosts.map((value, key) => {
         return (
-          <div key={key} className="post">
-            <div className="title"> {value.title} </div>
+          <div key={key} className="post my-4 border p-2">
+            <div className="title text-2xl" > {value.title} </div>
             <div
-              className="body"
+              className="body italic text-gray-600"
               onClick={() => {
                 history.push(`/post/${value.id}`);
               }}
@@ -97,6 +107,8 @@ function Home() {
                 <label> {value.Likes.length}</label>
               </div>
             </div>
+
+            <ShareSocial style={style} />
           </div>
         );
       })}
