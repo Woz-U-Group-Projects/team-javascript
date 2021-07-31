@@ -84,7 +84,7 @@ function App() {
             )}
 
             <div className="loggedInContainer">
-              <h1>{authState.username} </h1>
+              <h1>Welcome {authState.username}!</h1>
               <a href="/">
               {authState.status && <button onClick={logout} className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Logout</button>}
               </a>

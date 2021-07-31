@@ -2,7 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../helpers/AuthContext";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 function Profile() {
@@ -22,17 +23,60 @@ function Profile() {
     });
   }, []);
 
+  //image POST
+  // const imageHandler = (event) => {
+
+  //   const file= event.target.files[0];
+  //   const formData = new FormData()
+  //   formData.append('image', file)
+
+  //   fetch('http://localhost:3001/image
+  //     body: formData,
+  //     headers: {
+  //       'Accept': 'multipart/form-data',
+  //     },
+  //     credentials: 'include',
+  //   })
+  //   .then(res => res.json())
+  //   .then(res => {
+  //     setUploadStatus(res.msg);
+  //   })
+  //   .catch(error => {
+  //     console.error(error)
+  //   })
+  // }
+
+  //image onChange event listener
+
+  
+   
+ 
+
   return (
-    
+
     <div className="row py-5 px-4">
       <div className="col-md-5 mx-auto">
 
         <div className="bg-white shadow rounded overflow-hidden">
           <div className="px-4 pt-0 pb-4 cover">
             <div className="media align-items-end profile-head">
-              <div className="profile mr-3"><img /><a href="#" className="btn btn-outline-dark btn-sm btn-block">Edit profile</a></div>
+
               <div className="media-body mb-5 text-white">
-                <h4 className="mt-0 mb-0 text-dark">Welcome {username} </h4>
+
+                <h4 className="mt-0 mb-0 text-dark">{authState.username} </h4>
+
+                
+                <form>
+                <input
+
+                  type="file"
+                  name="image"
+                  id="file"
+                 accept=".jpeg, .png, .jpg" 
+                 />
+                <input type="submit" className="btn btn-outline-dark btn-sm btn-block" />
+                </form>
+                
                 {authState.username === username && (
                   <button
                     onClick={() => {
@@ -71,7 +115,7 @@ function Profile() {
           <div>
             <Link to="/post" className="btn btn-primary">Make a new post</Link>
           </div>
-          
+
           <div className="py-4 px-4">
             <div className="d-flex align-items-center justify-content-between mb-3">
               <h5 className="mb-0">Recent posts</h5><a href="#" className="btn btn-link text-muted">Show all</a>

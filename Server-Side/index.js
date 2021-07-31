@@ -26,15 +26,15 @@ app.use("/auth", usersRouter);
 const likesRouter = require("./routes/Likes");
 app.use("/likes", likesRouter);
 
-// Multer
-const upload = multer({storage})
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, "./images");},
-    filename: function(req, file, cb){
-        cb(null, 'uploads/${file.originalname}-${Date.now()}.${ext}');
-    }
-})
+// // Multer
+// const upload = multer({storage})
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, "./images");},
+//     filename: function(req, file, cb){
+//         cb(null, 'uploads/${file.originalname}-${Date.now()}.${ext}');
+//     }
+// })
 
 db.sequelize.sync().then(() => {
   app.listen(3001, () => {
