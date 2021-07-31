@@ -3,7 +3,7 @@
 :root {
   --primary-white: #ffffff;
   --primary-dark: rgba(52,58,64);
-  --primary-azure: #037ffc;
+  --primary-azure: rgb(1, 118, 185);
 }
 
 /* Sign in form*/
@@ -69,7 +69,7 @@ body {
 .post .title {
   flex: 20%;
   border-bottom: 1px solid lightgray;
-  background-color: darkblue;
+  background-color: rgb(1, 118, 185);
   display: grid;
   place-content: center;
   color: white;
@@ -87,7 +87,7 @@ body {
   display: flex;
   align-items: center;
   padding-left: 15px;
-  background-color: darkblue;
+  background-color: var(--primary-azure);
   color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -132,7 +132,7 @@ body {
   width: 500px;
   height: auto;
   padding: 20px;
-  border: 5px solid darkblue;
+  border: 5px solid var(--primary-azure);
   border-radius: 5px;
 }
 
@@ -150,14 +150,14 @@ body {
   margin-top: 15px;
   height: 40px;
   border: none;
-  background-color: darkblue;
+  background-color: var(--primary-azure);
   border-radius: 5px;
   color: white;
 }
 
 .formContainer button:hover {
   cursor: pointer;
-  background-color: darkblue;
+  background-color: var(--primary-azure);
 }
 
 span {
@@ -181,12 +181,12 @@ button {
 }
 
 .addCommentContainer button {
-  background-color: darkblue;
+  background-color: var(--primary-azure);
   color: white;
 }
 
 .addCommentContainer input {
-  border: 2px solid darkblue;
+  border: 2px solid var(--primary-azure);
 }
 
 .rightSide .listOfComments {
