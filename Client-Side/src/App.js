@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -61,24 +61,24 @@ function App() {
           <Router>
             {!authState.status ? (
               <>
-                <div class='navbar-brand flex flex-col justify-center items-center'>
+                <div className='navbar-brand flex flex-col justify-center items-center'>
                   <div >
-                    <Link to="/login" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Login</Link>
-                    <Link to="/registration" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Registration</Link>
+                    <NavLink to="/login" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Login</NavLink>
+                    <NavLink to="/registration" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Registration</NavLink>
                   </div>
                 </div>
               </>
             ) : (
               <>
                 <div className='nav'>
-                  <Link to="/" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
-                    activeClassName='bg-blue-900 text-white'> Home </Link>
+                  <NavLink to="/" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
+                    activeClassName='bg-blue-900 text-white'> Home </NavLink>
                   
-                  <Link to="/createpost" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
-                    activeClassName='bg-blue-900 text-white'> Create A Post</Link>
+                  <NavLink to="/createpost" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
+                    activeClassName='bg-blue-900 text-white'> Create A Post</NavLink>
                     
-                  <Link to="/profile" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
-                    activeClassName='bg-blue-900 text-white'> Profile</Link>
+                  <NavLink to="/profile" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
+                    activeClassName='bg-blue-900 text-white'> Profile</NavLink>
                 </div>
               </>
             )}

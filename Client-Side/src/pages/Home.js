@@ -95,6 +95,7 @@ function Home() {
                 />
 
                 <label> {value.Likes.length}</label>
+                
               </div>
             </div>
           </div>
