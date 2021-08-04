@@ -26,7 +26,7 @@ function Registration() {
 
   return ( 
   
-    
+    <span className="span1">
     <div className ="formRegistration">
      
       <Formik
@@ -98,7 +98,7 @@ function Registration() {
         </Form>
       </Formik>
     </div>
-    
+    </span>
   );
 }
 
