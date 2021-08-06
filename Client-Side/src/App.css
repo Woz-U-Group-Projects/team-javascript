@@ -12,30 +12,32 @@
 }
 
 .box {
-  width: 300px;
+  border: solid rgb(0, 0, 0);
+  width: 350px;
   padding: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-repeat: none;
   text-align: center;
+  margin: 30px;
 }
+
 
 .username1, .password1 {
   border: 0;
-  background: none;
+  background: #000000;
   display: block;
   margin: 20px auto;
   text-align: center;
-  border:2px solid rgb(1, 118, 185);
+  border:3px solid rgb(1, 118, 185);
   padding: 14px 10px;
   width: 200px;
   outline: none;
-  color:#ffffff;
   border-radius: 24px;
   transition: 0.25s;
-  color: black;
+  color: white;
+  font-weight: bold;
 }
 
 .username1:focus, .password1:focus {
@@ -44,12 +46,12 @@
 }
 .submit1 {
   border: 0;
-  background: none;
+  background: black;
   display: block;
   margin: 20px auto;
   text-align: center;
-  border:2px solid #2ecc71;
-  padding: 14px 40px;
+  border:3px solid #2ecc71;
+  padding: 14px 10px;
   outline: none;
   color:#ffffff;
   border-radius: 24px;
@@ -102,7 +104,6 @@
   justify-content: center;
   align-items: center;
   margin: 5rem;
-
   padding: 5px 5px 5px 15px;
   margin-bottom: 10px;
   background: #ffffff;
