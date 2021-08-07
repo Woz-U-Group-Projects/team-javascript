@@ -7,6 +7,70 @@
 }
 
 /* Sign in form*/
+.span1 {
+  background-color: rgba(54,58,64);
+}
+
+.box {
+  border: solid rgb(9, 47, 128);
+  border-radius: 12px;
+  width: 350px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 30px;
+}
+
+
+.username1, .password1 {
+  border: 0;
+  background: #ffffff;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:3px solid rgb(1, 118, 185);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  color: #000000;
+  font-weight: bold;
+}
+
+.username1:focus, .password1:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+.submit1 {
+  border: 0;
+  background: rgb(20, 88, 128);
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:3px solid rgb(9, 47, 128);
+  padding: 14px 10px;
+  outline: none;
+  color:#ffffff;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
+.label1, .label2 {
+  color:black;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .form {
   text-align: center;
 }
@@ -35,16 +99,87 @@
 }
 
 /***CSS for the Registration form***/
+
 .formRegistration{
   display:flex;
   justify-content: center;
+  align-items: center;
   margin: 5rem;
-  
+  padding: 5px 5px 5px 15px;
+  margin-bottom: 10px;
+  background: #ffffff;
 }
 
-body {
+.formContainer{
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
 
-  display: flex;
+.formContainer .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.formContainer .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+}
+
+.submitButton{
+  display: block;
+  text-align: center;
+  color: rgb(37, 122, 74);
+  text-shadow: 0px 1px 1px #ffffff;
+  border-bottom: 2pm solid #b2b2b2;
+  background-color: #b9e4e3;
+  background:
+  -webkit-gradient(linear, left top, left bottom from(#beeae9), to(#a8cfce));
+  background:
+  -moz-linear-gradient(top, #beeae9, #a8cfce);
+  background:
+  -o-linear-gradient(top, #beeae9, #a8cfce);
+  background:
+  -ms-linear-gradient(top, #beeae9, #a8cfce);
+}
+
+.submitButton:hover {
+  color: #333333;
+  border: 2px solid #a4a4a4;
+  border-top: 2px solid #b2b2b2;
+  background-color: #a0dbc4;
+  background: 
+  -webkit-gradient(linear, left top, left bottom, from(#a8cfce), to(#beeae9));
+  background:
+  -moz-linear-gradient(top, #a8cfce, #beeae9);
+  background:
+  -o-linear-gradient(top, #a8cfce, #beeae9);
+  background:
+  -ms-linear-gradient(top, #a8cfce, #beeae9);
+}
+ 
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color:black;
+}
+
+.div1, .div2, .div3, .div4, .div5 {
+  padding: 10px;
+}
+
+
+/**CSS for Post form**/
+body {
+  margin: 0;
+  padding: 0;
   justify-content: center; 
 }
 

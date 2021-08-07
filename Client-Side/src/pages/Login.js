@@ -27,33 +27,39 @@ function Login() {
     });
   };
   return (
-    <div className='max-w-md mx-auto mt-20 border py-4 px-8'>
+    <span className="span1">
+    <div className='box'>
       <div className='loginContainer flex flex-col max-w-md justify-center align-center'>
-        <label>Username:</label>
+        
         <input
           type='text'
-          className='py-2 my-2 border border rounded'
+          className='username1'
+          placeholder='Username'
           onChange={(event) => {
             setUsername(event.target.value);
           }}
         />
-        <label>Password:</label>
+        
         <input
           type='password'
-          className='py-2 my-2 border border rounded'
+          className='password1'
+          placeholder='Password'
           onChange={(event) => {
             setPassword(event.target.value);
           }}
         />
+        
 
         <button
+          className='submit1'
           onClick={login}
-          className='bg-blue-900 hover:bg-blue-800 py-2 rounded text-blue-50 mt-2'>
+          >
           {' '}
           Login{' '}
         </button>
       </div>
     </div>
+    </span>
   );
 }
 
