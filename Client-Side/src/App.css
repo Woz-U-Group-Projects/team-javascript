@@ -12,7 +12,8 @@
 }
 
 .box {
-  border: solid rgb(0, 0, 0);
+  border: solid rgb(9, 47, 128);
+  border-radius: 12px;
   width: 350px;
   padding: 40px;
   position: absolute;
@@ -26,7 +27,7 @@
 
 .username1, .password1 {
   border: 0;
-  background: #000000;
+  background: #ffffff;
   display: block;
   margin: 20px auto;
   text-align: center;
@@ -36,7 +37,7 @@
   outline: none;
   border-radius: 24px;
   transition: 0.25s;
-  color: white;
+  color: #000000;
   font-weight: bold;
 }
 
@@ -46,11 +47,11 @@
 }
 .submit1 {
   border: 0;
-  background: black;
+  background: rgb(20, 88, 128);
   display: block;
   margin: 20px auto;
   text-align: center;
-  border:3px solid #2ecc71;
+  border:3px solid rgb(9, 47, 128);
   padding: 14px 10px;
   outline: none;
   color:#ffffff;
