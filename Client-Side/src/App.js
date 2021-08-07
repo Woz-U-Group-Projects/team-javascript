@@ -79,12 +79,13 @@ function App() {
                     
                   <NavLink to="/profile" className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-1 px-2'
                     activeClassName='bg-blue-900 text-white'> Profile</NavLink>
+                    
                 </div>
               </>
             )}
 
             <div className="loggedInContainer">
-              <h1>Welcome {authState.username}!</h1>
+              
               <a href="/">
               {authState.status && <button onClick={logout} className='text-blue-900 no-underline scale-0 hover:bg-blue-900 hover:text-blue-50 py-2 px-2'> Logout</button>}
               </a>

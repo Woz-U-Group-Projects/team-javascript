@@ -21,36 +21,10 @@ function Profile() {
     });
   }, []);
 
-  //image POST
-  // const imageHandler = (event) => {
-
-  //   const file= event.target.files[0];
-  //   const formData = new FormData()
-  //   formData.append('image', file)
-
-  //   fetch('http://localhost:3001/image
-  //     body: formData,
-  //     headers: {
-  //       'Accept': 'multipart/form-data',
-  //     },
-  //     credentials: 'include',
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => {
-  //     setUploadStatus(res.msg);
-  //   })
-  //   .catch(error => {
-  //     console.error(error)
-  //   })
-  // }
-
-  //image onChange event listener
-
+  
   
    
- 
-
-  return (
+ return (
     
     <div className="row py-12 px-px">
       <div className="">
@@ -94,10 +68,7 @@ function Profile() {
               <li className="list-inline-item">
                 <h5 className="font-weight-bold mb-0 d-block"></h5><small className="text-muted"> <i className="fas fa-image mr-1"></i>Blogs</small>
               </li>
-              <li className="list-inline-item">
-                <h5 className="font-weight-bold mb-0 d-block"></h5><small className="text-muted"> <i className="fas fa-user mr-1"></i>Friends</small>
-              </li>
-
+             
             </ul>
           </div>
           <div className="px-4 py-3">
