@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import { Fa } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -92,6 +93,7 @@ function App() {
       <footer className='bg-blue-100 py-4 px-1 text-center'>
           <h3>Blogster</h3>
           <h6>All Rights Reserved</h6>
+          <div className='flex'></div>
       </footer>
     </div>
   );
