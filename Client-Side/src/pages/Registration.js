@@ -22,14 +22,14 @@ function Registration() {
   };
 
   return (
-    <div className='formRegistrationn max-w-md mx-auto mt-20 border py-4 px-8'>
-      <div className=' flex flex-col justify-center align-center'>
+    <span className='span1'>
+    <div className='formRegistration'>
         <Formik
           initialValues={initialValues}
           onSubmit={onSubmit}
           validationSchema={validationSchema}>
           <Form className='formContainer'>
-            <div>
+            <div className="div1">
               <label>First Name: </label>
               <br />
               <ErrorMessage name='first_name' component='span' />
@@ -40,7 +40,7 @@ function Registration() {
                 placeholder='(Ex. John...)'
               />
             </div>
-            <div>
+            <div className="div2">
               <label>Last Name: </label>
               <br />
               <ErrorMessage name='last_name' component='span' />
@@ -51,7 +51,7 @@ function Registration() {
                 placeholder='(Ex. Doe...)'
               />
             </div>
-            <div>
+            <div className="div3">
               <label>Email: </label>
               <br />
               <ErrorMessage name='email' component='span' />
@@ -62,7 +62,7 @@ function Registration() {
                 placeholder='(Ex. John123@gmail.com...)'
               />
             </div>
-            <div>
+            <div className="div4">
               <label>Username: </label> <br />
               <ErrorMessage name='username' component='span' />
               <Field
@@ -72,7 +72,7 @@ function Registration() {
                 placeholder='(Ex. John123...)'
               />
             </div>
-            <div>
+            <div className="div5">
               <label>Password: </label>
               <ErrorMessage name='password' component='span' />
               <Field
@@ -86,14 +86,14 @@ function Registration() {
             {/* <Link to="/login" className="btn btn-primary">Register</Link> */}
             <button
               type='submit'
-              className='bg-blue-900 hover:bg-blue-800 py-2 rounded text-blue-50 mt-3 w-full'>
+              className='submitButton'>
               {' '}
               Register
             </button>
           </Form>
         </Formik>
       </div>
-    </div>
+      </span>
   );
 }
 
