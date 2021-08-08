@@ -1,5 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import { Fa } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
@@ -53,42 +54,57 @@ function App() {
   };
 
   return (
-    <div>
+    <div className='h-full'>
       <Navbar></Navbar>
-    <div className="App">
-      <AuthContext.Provider value={{ authState, setAuthState }}>
-        <Router>
-          
-              {!authState.status ? (
-                <>
-                 <Link to="/login"> Login</Link>
+      <div className="App">
+        <AuthContext.Provider value={{ authState, setAuthState }}>
+          <Router>
+            
+                {!authState.status ? (
+                  <>
+                  <Link to="/login"> Login</Link>
                   <Link to="/registration"> Registration</Link>
-                </>
-              ) : (
-                <>
-                  <Link to="/"> Home Page</Link>
-                  <Link to="/createpost"> Create A Post</Link>
-                </>
-              )}
-           
-            <div className="loggedInContainer">
-              <h1>{authState.username} </h1>
-              {authState.status && <button onClick={logout}> Logout</button>}
-            </div>
-         
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/createpost" exact component={CreatePost} />
-            <Route path="/post/:id" exact component={Post} />
-            <Route path="/registration" exact component={Registration} />
-            <Route path="/login" exact component={Login} />
-            <Route path="/profile/:id" exact component={Profile} />
-            <Route path="/changepassword" exact component={ChangePassword} />
-            <Route path="*" exact component={PageNotFound} />
-          </Switch>
-        </Router>
-      </AuthContext.Provider>
-    </div>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/"> Home Page</Link>
+                    <Link to="/createpost"> Create A Post</Link>
+                  </>
+                )}
+            
+              <div className="loggedInContainer">
+                <h1>{authState.username} </h1>
+                {authState.status && <button onClick={logout}> Logout</button>}
+              </div>
+          
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/createpost" exact component={CreatePost} />
+              <Route path="/post/:id" exact component={Post} />
+              <Route path="/registration" exact component={Registration} />
+              <Route path="/login" exact component={Login} />
+              <Route path="/profile/:id" exact component={Profile} />
+              <Route path="/changepassword" exact component={ChangePassword} />
+              <Route path="*" exact component={PageNotFound} />
+            </Switch>
+          </Router>
+        </AuthContext.Provider>
+      </div>
+      <footer className='bg-blue-100 py-8 px-1 text-center bottom-0' style={{}}>
+        <h3>Blogster</h3>
+        <h6>All Rights Reserved</h6>
+        <div className='flex'></div>
+        <div className="social-menu mt-2">
+          <h6 className='py-6'>Follow us</h6>
+          <ul>
+            <li><a href=""><i className="fa fa-facebook"></i></a></li>
+            <li><a href=""><i className="fa fa-twitter"></i></a></li>
+            <li><a href=""><i className="fa fa-instagram"></i></a></li>
+            <li><a href=""><i className="fa fa-youtube"></i></a></li>
+            <li><a href=""><i className="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
   );
 }

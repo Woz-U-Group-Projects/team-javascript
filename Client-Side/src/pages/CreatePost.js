@@ -36,31 +36,33 @@ function CreatePost() {
   };
 
   return (
-    <div className="createPostPage">
+    <div className="createPostPage w-1/3 mx-auto border p-4">
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
         <Form className="formContainer">
-          <label>Title: </label>
-          <ErrorMessage name="title" component="span" />
+          <label className='block py-2'>Title: </label>
+          <ErrorMessage name="title" component="span" className='block text-red-500' />
           <Field
             autoComplete="off"
             id="inputCreatePost"
             name="title"
             placeholder="(Ex. Title...)"
+            class="p-2 block w-full border"
           />
-          <label>Post: </label>
-          <ErrorMessage name="postText" component="span" />
+          <label className='block py-2'>Post: </label>
+          <ErrorMessage name="postText" component="span" className='block text-red-500' />
           <Field
             autoComplete="off"
             id="inputCreatePost"
             name="postText"
             placeholder="(Ex. Post...)"
+            class='p-2 block w-full border h-32'
           />
 
-          <button type="submit"> Create Post</button>
+          <button type="submit" className='bg-blue-800 text-white w-full my-4 py-2 hover:bg-blue-600'> Create Post</button>
         </Form>
       </Formik>
     </div>
