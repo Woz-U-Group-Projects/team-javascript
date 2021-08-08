@@ -90,7 +90,7 @@ function App() {
           </Router>
         </AuthContext.Provider>
       </div>
-      <footer className='bg-blue-100 py-8 px-1 text-center bottom-0' style={{width: '100%', position: 'absolute', bottom:'0'}}>
+      <footer className='bg-blue-100 py-8 px-1 text-center bottom-0' style={{}}>
         <h3>Blogster</h3>
         <h6>All Rights Reserved</h6>
         <div className='flex'></div>

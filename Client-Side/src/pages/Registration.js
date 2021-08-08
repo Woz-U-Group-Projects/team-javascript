@@ -22,7 +22,7 @@ function Registration() {
   };
 
   return (
-    <div className='formRegistrationn max-w-md mx-auto mt-20 border py-4 px-8'>
+    <div className='formRegistrationn max-w-md mx-auto mt-20 border py-16 px-8'>
       <div className=' flex flex-col justify-center align-center'>
         <Formik
           initialValues={initialValues}
