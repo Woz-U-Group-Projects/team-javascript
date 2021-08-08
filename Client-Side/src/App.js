@@ -90,10 +90,20 @@ function App() {
           </Router>
         </AuthContext.Provider>
       </div>
-      <footer className='bg-blue-100 py-4 px-1 text-center'>
-          <h3>Blogster</h3>
-          <h6>All Rights Reserved</h6>
-          <div className='flex'></div>
+      <footer className='bg-blue-100 py-8 px-1 text-center bottom-0' style={{width: '100%', position: 'absolute', bottom:'0'}}>
+        <h3>Blogster</h3>
+        <h6>All Rights Reserved</h6>
+        <div className='flex'></div>
+        <div className="social-menu mt-2">
+          <h6 className='py-6'>Follow us</h6>
+          <ul>
+            <li><a href=""><i className="fa fa-facebook"></i></a></li>
+            <li><a href=""><i className="fa fa-twitter"></i></a></li>
+            <li><a href=""><i className="fa fa-instagram"></i></a></li>
+            <li><a href=""><i className="fa fa-youtube"></i></a></li>
+            <li><a href=""><i className="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
       </footer>
     </div>
   );
