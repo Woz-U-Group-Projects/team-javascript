@@ -2,6 +2,78 @@
   --primary-white: #ffffff;
   --primary-dark: rgba(52,58,64);
   --primary-azure: #037ffc;
+  --primary-azure: rgb(1, 118, 185);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sign in form*/
+.span1 {
+  background-color: rgba(54,58,64);
+}
+
+.box {
+  border: solid rgb(9, 47, 128);
+  border-radius: 12px;
+  width: 350px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 30px;
+}
+
+
+.username1, .password1 {
+  border: 0;
+  background: #ffffff;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:3px solid rgb(1, 118, 185);
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  border-radius: 24px;
+  transition: 0.25s;
+  color: #000000;
+  font-weight: bold;
+}
+
+.username1:focus, .password1:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+.submit1 {
+  border: 0;
+  background: rgb(20, 88, 128);
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border:3px solid rgb(9, 47, 128);
+  padding: 14px 10px;
+  outline: none;
+  color:#ffffff;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+.box input[type = "submit"]:hover{
+  background: #2ecc71;
+}
+
+.label1, .label2 {
+  color:black;
+  text-align: center;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .form {
