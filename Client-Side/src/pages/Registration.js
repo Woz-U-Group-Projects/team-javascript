@@ -86,7 +86,7 @@ function Registration() {
             {/* <Link to="/login" className="btn btn-primary">Register</Link> */}
             <button
               type='submit'
-              className='submitButton'>
+              id='submitButton'>
               {' '}
               Register
             </button>

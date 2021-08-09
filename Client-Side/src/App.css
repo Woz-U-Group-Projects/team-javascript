@@ -110,7 +110,7 @@
   background: #ffffff;
 }
 
-.formContainer{
+.formContainer1 {
   max-width: 700px;
   width: 100%;
   background: #ffffff;
@@ -118,13 +118,13 @@
   border-radius: 5px;
 }
 
-.formContainer .title{
+.formContainer1 .title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
 
-.formContainer .title::before{
+.formContainer1 .title::before{
   content: '';
   position: absolute;
   left: 0;
@@ -133,7 +133,7 @@
   width: 30px;
 }
 
-.submitButton{
+#submitButton{
   display: block;
   text-align: center;
   color: rgb(37, 122, 74);
@@ -150,7 +150,7 @@
   -ms-linear-gradient(top, #beeae9, #a8cfce);
 }
 
-.submitButton:hover {
+#submitButton:hover {
   color: #333333;
   border: 2px solid #a4a4a4;
   border-top: 2px solid #b2b2b2;
@@ -178,8 +178,8 @@ label {
 
 /**CSS for Post form**/
 body {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  align-items: center;
   justify-content: center; 
 }
 
